@@ -9,15 +9,15 @@ import UIKit
 
 public extension Iconic {
     
-    public static func fontOfSize(_ fontSize: CGFloat) -> UIFont {
+    static func fontOfSize(_ fontSize: CGFloat) -> UIFont {
         return Fontello.fontOfSize(fontSize, name: "fontello_iconic")
     }
     
-    public static func stringWithName(_ name: Iconic) -> String {
-        return name.rawValue.substring(to: name.rawValue.characters.index(name.rawValue.startIndex, offsetBy: 1))
+    static func stringWithName(_ name: Iconic) -> String {
+        return String(name.rawValue[..<name.rawValue.index(name.rawValue.startIndex, offsetBy: 1)])
     }
     
-    public static func stringWithCode(_ code: String) -> String? {
+    static func stringWithCode(_ code: String) -> String? {
         guard let raw = IconicIcons[code], let icon = Iconic(rawValue: raw) else {
             return nil
         }

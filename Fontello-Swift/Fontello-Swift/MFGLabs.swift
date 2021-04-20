@@ -10,15 +10,15 @@ import UIKit
 
 public extension MFGLabs {
 
-    public static func fontOfSize(_ fontSize: CGFloat) -> UIFont {
+    static func fontOfSize(_ fontSize: CGFloat) -> UIFont {
         return Fontello.fontOfSize(fontSize, name: "fontello_mfglabs")
     }
     
-    public static func stringWithName(_ name: MFGLabs) -> String {
-        return name.rawValue.substring(to: name.rawValue.characters.index(name.rawValue.startIndex, offsetBy: 1))
+    static func stringWithName(_ name: MFGLabs) -> String {
+        return String(name.rawValue[..<name.rawValue.index(name.rawValue.startIndex, offsetBy: 1)])
     }
     
-    public static func stringWithCode(_ code: String) -> String? {
+    static func stringWithCode(_ code: String) -> String? {
         guard let raw = MFGLabsIcons[code], let icon = MFGLabs(rawValue: raw) else {
             return nil
         }

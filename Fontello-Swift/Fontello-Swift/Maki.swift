@@ -10,15 +10,15 @@ import UIKit
 
 public extension Maki {
 
-    public static func fontOfSize(_ fontSize: CGFloat) -> UIFont {
+    static func fontOfSize(_ fontSize: CGFloat) -> UIFont {
         return Fontello.fontOfSize(fontSize, name: "fontello_maki")
     }
     
-    public static func stringWithName(_ name: Maki) -> String {
-        return name.rawValue.substring(to: name.rawValue.characters.index(name.rawValue.startIndex, offsetBy: 1))
+    static func stringWithName(_ name: Maki) -> String {
+        return String(name.rawValue[..<name.rawValue.index(name.rawValue.startIndex, offsetBy: 1)])
     }
     
-    public static func stringWithCode(_ code: String) -> String? {
+    static func stringWithCode(_ code: String) -> String? {
         guard let raw = MakiIcons[code], let icon = Maki(rawValue: raw) else {
             return nil
         }

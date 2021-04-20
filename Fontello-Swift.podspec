@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.author       = { 'Chisj' => 'chisj2012@gmail.com' }
   s.source       = { :git => 'https://github.com/chisj/Fontello-Swift.git', :tag => '1.2' }
 
-  s.platform     = :ios, '8.0'
+  s.platform     = :ios, '10.0'
   s.framework    = 'UIKit'
   s.requires_arc = true
 

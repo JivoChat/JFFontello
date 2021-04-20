@@ -10,15 +10,15 @@ import UIKit
 
 public extension Typicons {
 
-    public static func fontOfSize(_ fontSize: CGFloat) -> UIFont {
+    static func fontOfSize(_ fontSize: CGFloat) -> UIFont {
         return Fontello.fontOfSize(fontSize, name: "fontello_typicons")
     }
     
-    public static func stringWithName(_ name: Typicons) -> String {
-        return name.rawValue.substring(to: name.rawValue.characters.index(name.rawValue.startIndex, offsetBy: 1))
+    static func stringWithName(_ name: Typicons) -> String {
+        return String(name.rawValue[..<name.rawValue.index(name.rawValue.startIndex, offsetBy: 1)])
     }
     
-    public static func stringWithCode(_ code: String) -> String? {
+    static func stringWithCode(_ code: String) -> String? {
         guard let raw = TypiconsIcons[code], let icon = Typicons(rawValue: raw) else {
             return nil
         }

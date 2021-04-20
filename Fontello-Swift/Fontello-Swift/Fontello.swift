@@ -9,7 +9,7 @@
 import UIKit
 
 open class Fontello {
-    open static func fontOfSize(_ fontSize: CGFloat, name: String) -> UIFont {
+    public static func fontOfSize(_ fontSize: CGFloat, name: String) -> UIFont {
         if UIFont.fontNames(forFamilyName: name).isEmpty {
             Fontello.loadFont(name)
         }
