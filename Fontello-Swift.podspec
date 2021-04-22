@@ -1,14 +1,15 @@
 Pod::Spec.new do |s|
   s.name         = 'Fontello-Swift'
-  s.version      = '1.2'
+  s.version      = '1.3-fork'
   s.summary      = 'Fontello Icon font library for Swift. support icon fonts from http://fontello.com/'
 
   s.homepage     = 'https://github.com/chisj/Fontello-Swift'
   s.license      = 'MIT'
   s.author       = { 'Chisj' => 'chisj2012@gmail.com' }
-  s.source       = { :git => 'https://github.com/chisj/Fontello-Swift.git', :tag => '1.2' }
+  s.source       = { :git => 'https://github.com/bronenos/Fontello-Swift.git', :tag => "#{s.version}" }
 
   s.platform     = :ios, '10.0'
+  s.swift_version = '5.0'
   s.framework    = 'UIKit'
   s.requires_arc = true
 
