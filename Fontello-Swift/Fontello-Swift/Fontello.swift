@@ -11,7 +11,7 @@ import UIKit
 open class Fontello {
     open static func fontOfSize(_ fontSize: CGFloat, name: String) -> UIFont {
         if UIFont.fontNames(forFamilyName: name).isEmpty {
-            JFFontello.loadFont(name)
+            Fontello.loadFont(name)
         }
         
         return UIFont(name: name, size: fontSize)!
