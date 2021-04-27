@@ -9,7 +9,7 @@
 import UIKit
 
 open class Fontello {
-    public static func fontOfSize(_ fontSize: CGFloat, name: String) -> UIFont {
+    open static func fontOfSize(_ fontSize: CGFloat, name: String) -> UIFont {
         if UIFont.fontNames(forFamilyName: name).isEmpty {
             Fontello.loadFont(name)
         }
@@ -19,19 +19,22 @@ open class Fontello {
 
     static func loadFont(_ name: String) {
         let bundle = Bundle(for: Fontello.self)
-        guard let identifier = bundle.bundleIdentifier else { return }
+        var fontURL: URL?
+        let identifier = bundle.bundleIdentifier
         
-        let fontURL: URL?
-        if identifier.hasPrefix("org.cocoapods") == true {
+        if identifier?.hasPrefix("org.cocoapods") == true {
             fontURL = bundle.url(forResource: name, withExtension: "ttf", subdirectory: "\(name).bundle")
-        } else {
+        }
+        else {
             fontURL = bundle.url(forResource: name, withExtension: "ttf")
         }
         
-        guard let url = fontURL else { return }
-        guard let data = try? Data(contentsOf: url) else { return }
-        guard let provider = CGDataProvider(data: data as CFData) else { return }
-        guard let font = CGFont(provider) else { return }
+        guard
+            let url = fontURL,
+            let data = try? Data(contentsOf: url),
+            let provider = CGDataProvider(data: data as CFData),
+            let font = CGFont(provider)
+        else { return }
         
         var error: Unmanaged<CFError>?
         if !CTFontManagerRegisterGraphicsFont(font, &error) {
