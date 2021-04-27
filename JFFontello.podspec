@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'Entypo' do |ss|
-    ss.dependency 'Fontello-Swift/Fontello'
+    ss.dependency 'JFFontello/Fontello'
     ss.source_files = 'Fontello-Swift/Fontello-Swift/Entypo.swift'
     ss.resource_bundle  = {'fontello_entypo' => 'Fontello-Swift/Fontello-Swift/fontello_entypo.ttf'}
   end
