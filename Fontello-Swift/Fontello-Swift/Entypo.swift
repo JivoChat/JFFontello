@@ -10,7 +10,7 @@ import UIKit
 public extension Entypo {
     
     static func fontOfSize(_ fontSize: CGFloat) -> UIFont {
-        return Fontello.fontOfSize(fontSize, name: "fontello_entypo")
+        return JFFontello.fontOfSize(fontSize, name: "fontello_entypo")
     }
     
     static func stringWithName(_ name: Entypo) -> String {
