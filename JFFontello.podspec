@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'JFFontello'
-  s.version      = '1.3-fork'
+  s.version      = '1.4'
   s.summary      = 'Fontello Icon font library for Swift. support icon fonts from http://fontello.com/'
 
   s.homepage     = 'https://github.com/chisj/Fontello-Swift'
